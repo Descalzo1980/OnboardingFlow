@@ -1,21 +1,19 @@
-//
-//  ContentView.swift
-//  OnbordingFlow
-//
-//  Created by Станислав Леонов on 21.06.2025.
-//
-
 import SwiftUI
+
+let gradientColors: [Color] = [
+    .gradientTop,
+    .gradientBottom
+]
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            WelcomePage()
+            FeaturesPage()
         }
-        .padding()
+        .background(Gradient(colors: gradientColors))
+        .tabViewStyle(.page)
+        .foregroundStyle(.white)
     }
 }
 
